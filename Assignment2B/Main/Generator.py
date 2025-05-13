@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Load site_data (from previous step)
-site_data = pd.read_pickle('Main/site_data.pkl')
+site_data = pd.read_pickle('site_data.pkl')
 
 # Parameters
 WINDOW_SIZE = 4  # past 4 time steps to predict next one
@@ -35,7 +35,7 @@ X_all = np.array(X_all)
 Y_all = np.array(Y_all)
 
 # Optionally save
-np.save('Main/X_all.npy', X_all)
-np.save('Main/Y_all.npy', Y_all)
+np.save('X_all.npy', X_all)
+np.save('Y_all.npy', Y_all)
 
-print("Saved to 'Main/X_all.npy' and 'Main/Y_all.npy'")
+print("Saved to 'X_all.npy' and 'Y_all.npy'")
