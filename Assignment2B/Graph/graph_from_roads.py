@@ -7,7 +7,7 @@ import os
 # === CONFIG ===
 CSV_PATH = "../Data/scats_site_info.csv"
 OUTPUT_PATH = "../Graph/scats_graph_from_roads.pkl"
-DIST_THRESHOLD_KM = 0.5
+#DIST_THRESHOLD_KM = 0.5
 
 # === Haversine Distance ===
 def haversine(lat1, lon1, lat2, lon2):
@@ -40,8 +40,8 @@ for road, group in grouped:
                 continue
             dist = haversine(row1['NB_LATITUDE'], row1['NB_LONGITUDE'],
                              row2['NB_LATITUDE'], row2['NB_LONGITUDE'])
-            if dist <= DIST_THRESHOLD_KM:
-                G.add_edge(int(row1['SCATS Number']), int(row2['SCATS Number']), distance=dist)
+            #if dist <= DIST_THRESHOLD_KM:
+            G.add_edge(int(row1['SCATS Number']), int(row2['SCATS Number']), distance=dist)
 
 # Save graph
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
